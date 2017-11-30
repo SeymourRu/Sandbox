@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23825363-EF97-4C3D-87D4-77FAC9C4C5FD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sandbox</RootNamespace>
+    <AssemblyName>Sandbox</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Exul.Core, Version=0.0.3.0, Culture=neutral, PublicKeyToken=e8bb05371ccae383, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exul.Core.0.0.3.0\lib\net45\Release\Exul.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Exul.Mathematics.LinearAlgebra, Version=0.0.2.0, Culture=neutral, PublicKeyToken=e8bb05371ccae383, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exul.Mathematics.LinearAlgebra.0.0.2.0\lib\net45\$(Configuration)\Exul.Mathematics.LinearAlgebra.dll</HintPath>
+    </Reference>
+    <Reference Include="ExulLibrary.Core, Version=0.0.2.5, Culture=neutral, PublicKeyToken=e8bb05371ccae383, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExulLibrary.Core.0.0.2.5\lib\net45\$(Configuration)\ExulLibrary.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ExulLibrary.Mathematics.LinearAlgebra, Version=0.0.1.4, Culture=neutral, PublicKeyToken=e8bb05371ccae383, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExulLibrary.Mathematics.LinearAlgebra.0.0.1.5\lib\net45\$(Configuration)\ExulLibrary.Mathematics.LinearAlgebra.dll</HintPath>
+    </Reference>
+    <Reference Include="FsAlg, Version=0.5.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FsAlg.0.5.13\lib\FsAlg.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Math, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Math.Matthey.2.0.0\lib\net45\Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Math.Tools.TrackReaders, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Math.Matthey.Tools.TrackReaders.2.0.0\lib\net45\Math.Tools.TrackReaders.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=3.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.3.20.0\lib\net40\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.LinearEquation, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.LinearEquation.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.LinearEquation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.NumericalLibrariesCommon, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.LinearEquation.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.NumericalLibrariesCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vectrics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vectrics.0.1.0.3\lib\net35\Vectrics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Manuals\Core_ReadMe.txt" />
+    <Content Include="Manuals\LinearAlgebra_ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

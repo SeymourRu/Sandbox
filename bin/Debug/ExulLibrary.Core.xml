@@ -1,0 +1,1451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExulLibrary.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ExulLibrary.Core.BaseTypeRequiredException">
+            <summary>
+                Describes an error when a type should have required base type.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.BaseTypeRequiredException.ActualTypeSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.BaseTypeRequiredException.ActualType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.BaseTypeRequiredException.RequiredTypeSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.BaseTypeRequiredException.RequiredType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.BaseTypeRequiredException.#ctor(System.String,System.Type,System.Type,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.BaseTypeRequiredException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="requiredType">
+                The required base type of the parameter.
+            </param>
+            <param name="actualType">
+                The actual base type of the parameter.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="actualType"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="requiredType"/> is <see langword="null"/>.
+                </para>
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.BaseTypeRequiredException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.BaseTypeRequiredException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.BaseTypeRequiredException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.BaseTypeRequiredException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.BaseTypeRequiredException.ActualType">
+            <summary>
+                Gets the actual type of the parameter.
+            </summary>
+            <value>
+                The actual type of the parameter.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.BaseTypeRequiredException.RequiredType">
+            <summary>
+                Gets the expected type of the parameter.
+            </summary>
+            <value>
+                The expected type of the parameter.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ElementIndexIsOutOfRangeException">
+            <summary>
+                Describes an error when an index of element is out of the expected range.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ElementIndexIsOutOfRangeException.ActualValueSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.ElementIndexIsOutOfRangeException.ActualValue"/> property for the serialization.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ElementIndexIsOutOfRangeException.MaxAcceptableValueSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.ElementIndexIsOutOfRangeException.MaxAcceptableValue"/> property for the serialization.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ElementIndexIsOutOfRangeException.MinAcceptableValueSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.ElementIndexIsOutOfRangeException.MinAcceptableValue"/> property for the serialization.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ElementIndexIsOutOfRangeException.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ElementIndexIsOutOfRangeException"/> class.
+            </summary>
+            <param name="argumentName">
+                The argument name.
+            </param>
+            <param name="actualValue">
+                The actual value of the argument.
+            </param>
+            <param name="minAcceptableValue">
+                The minimal acceptable value of the argument.
+            </param>
+            <param name="maxAcceptableValue">
+                The maximal acceptable value of the argument.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.ElementIndexIsOutOfRangeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ElementIndexIsOutOfRangeException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                An object that describes the source or destination of the serialized data.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.ElementIndexIsOutOfRangeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.ElementIndexIsOutOfRangeException.Message">
+            <summary>
+                Gets the error message and the string representation of the invalid argument value,
+                or only the error message if the argument value is null.
+            </summary>
+            <value>
+                The text message for this exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.ElementIndexIsOutOfRangeException.ActualValue">
+            <summary>
+                Gets the actual value of the argument.
+            </summary>
+            <value>
+                The actual value of the argument.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.ElementIndexIsOutOfRangeException.MaxAcceptableValue">
+            <summary>
+                Gets the maximal acceptable value of the argument.
+            </summary>
+            <value>
+                The maximal acceptable value of the argument.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.ElementIndexIsOutOfRangeException.MinAcceptableValue">
+            <summary>
+                Gets the minimal acceptable value of the argument.
+            </summary>
+            <value>
+                The minimal acceptable value of the argument.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.EmptyCollectionException">
+            <summary>
+                Describes an error when an empty collection is passed as value of an argument that doesn't support it.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.EmptyCollectionException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.EmptyCollectionException"/> class.
+            </summary>
+            <param name="argumentName">
+                The argument name.
+            </param>
+            <param name="message">
+                The message describing the error.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.EmptyCollectionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.EmptyCollectionException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.EmptyCollectionException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.GenericTypeDefinitionException">
+            <summary>
+                Describes an error when definition of generic type is provided for a parameter that doesn't support it.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.GenericTypeDefinitionException.ActualTypeSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.GenericTypeDefinitionException.ActualType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.GenericTypeDefinitionException.#ctor(System.String,System.Type,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.GenericTypeDefinitionException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="actualType">
+                The actual type definition provided to register.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="actualType"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.GenericTypeDefinitionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.GenericTypeDefinitionException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.GenericTypeDefinitionException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.GenericTypeDefinitionException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.GenericTypeDefinitionException.ActualType">
+            <summary>
+                Gets the actual type definition provided to register.
+            </summary>
+            <value>
+                The actual type definition provided to register.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.InterfaceRequiredException">
+            <summary>
+                Describes an error when a type should implement required interface.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.InterfaceRequiredException.RequiredInterfaceSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.InterfaceRequiredException.RequiredInterface"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.InterfaceRequiredException.#ctor(System.String,System.Type,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.InterfaceRequiredException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="expectedType">
+                The expected type of the parameter.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="expectedType"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.InterfaceRequiredException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.InterfaceRequiredException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.InterfaceRequiredException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.InterfaceRequiredException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.InterfaceRequiredException.RequiredInterface">
+            <summary>
+                Gets the expected type of the parameter.
+            </summary>
+            <value>
+                The expected type of the parameter.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.InvalidSizeArgumentException">
+            <summary>
+                Describes an error when an argument that represents size has negative value or is equal to zero.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.InvalidSizeArgumentException.ActualValueSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.InvalidSizeArgumentException.ActualValue"/> property for the serialization.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.InvalidSizeArgumentException.#ctor(System.String,System.Int32,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.InvalidSizeArgumentException"/> class.
+            </summary>
+            <param name="argumentName">
+                The argument name.
+            </param>
+            <param name="actualValue">
+                The actual value of the argument.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.InvalidSizeArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.InvalidSizeArgumentException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                An object that describes the source or destination of the serialized data.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.InvalidSizeArgumentException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.InvalidSizeArgumentException.Message">
+            <summary>
+                Gets the error message and the string representation of the invalid argument value,
+                or only the error message if the argument value is null.
+            </summary>
+            <value>
+                The text message for this exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.InvalidSizeArgumentException.ActualValue">
+            <summary>
+                Gets the actual value of parameter.
+            </summary>
+            <value>
+                The actual value of parameter.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.MissingParameterException">
+            <summary>
+                Describes an error when a required parameter is not provided.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.MissingParameterException.#ctor(System.String,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.MissingParameterException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.MissingParameterException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.MissingParameterException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.MissingParameterException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.NoEnoughElementsException">
+            <summary>
+                Describes an error when an argument that is a collection has less count of elements than it is expected.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.NoEnoughElementsException.ActualLengthSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.NoEnoughElementsException.ActualLength"/> property for the serialization.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.NoEnoughElementsException.MinimalAcceptableLengthSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.NoEnoughElementsException.MinimalAcceptableLength"/> property for the serialization.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.NoEnoughElementsException.#ctor(System.String,System.Int32,System.Int32,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.NoEnoughElementsException"/> class.
+            </summary>
+            <param name="argumentName">
+                The argument name.
+            </param>
+            <param name="actualLength">
+                The actual length of the collection.
+            </param>
+            <param name="minimalAcceptableLength">
+                The minimal acceptable length of the collection.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.NoEnoughElementsException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.NoEnoughElementsException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.NoEnoughElementsException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.NoEnoughElementsException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.NoEnoughElementsException.ActualLength">
+            <summary>
+                Gets the actual length of the collection.
+            </summary>
+            <value>
+                The actual length of the collection.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.NoEnoughElementsException.MinimalAcceptableLength">
+            <summary>
+                Gets the minimal acceptable length of the collection.
+            </summary>
+            <value>
+                The minimal acceptable length of the collection.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.NonComparableTypeException">
+            <summary>
+                Describes an error when a type specification has no default comparer and a custom comparer is not provided.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.NonComparableTypeException.ActualElementTypeSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.NonComparableTypeException.ActualElementType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.NonComparableTypeException.#ctor(System.String,System.Type,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.NonComparableTypeException"/> class.
+            </summary>
+            <param name="comparerParameterName">
+                The comparer parameter name.
+            </param>
+            <param name="actualElementType">
+                The actual type of items to compare.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="actualElementType"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.NonComparableTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.NonComparableTypeException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.NonComparableTypeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.NonComparableTypeException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.NonComparableTypeException.ActualElementType">
+            <summary>
+                Gets the actual type of element to compare.
+            </summary>
+            <value>
+                The actual type of element to compare.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ParameterTypeException">
+            <summary>
+                Describes an error when a parameter has type different from the expected.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ParameterTypeException.ActualTypeSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.ParameterTypeException.ActualType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ParameterTypeException.ExpectedTypeSerializationName">
+            <summary>
+                The name of <see cref="P:ExulLibrary.Core.ParameterTypeException.ExpectedType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ParameterTypeException.#ctor(System.String,System.Type,System.Type,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ParameterTypeException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="expectedType">
+                The expected type of the parameter.
+            </param>
+            <param name="actualType">
+                The actual type of the parameter.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="expectedType"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="actualType"/> is <see langword="null"/>.
+                </para>
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.ParameterTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ParameterTypeException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:ExulLibrary.Core.ParameterTypeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:ExulLibrary.Core.ParameterTypeException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.ParameterTypeException.ActualType">
+            <summary>
+                Gets the actual type of the parameter.
+            </summary>
+            <value>
+                The actual type of the parameter.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.ParameterTypeException.ExpectedType">
+            <summary>
+                Gets the expected type of the parameter.
+            </summary>
+            <value>
+                The expected type of the parameter.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcActionAttribute">
+            <summary>
+                Indicates asp.net mvc action.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.AspMvcActionAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.AspMvcActionAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.AspMvcActionAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.AspMvcActionAttribute"/> class.
+            </summary>
+            <param name="anonymousProperty">
+                The anonymous property.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.AspMvcActionAttribute.AnonymousProperty">
+            <summary>
+                Gets the anonymous property.
+            </summary>
+            <value>
+                The anonymous property.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcActionSelectorAttribute">
+            <summary>
+                Indicates asp.net mvc action selector.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcAreaAttribute">
+            <summary>
+                Indicates asp.net mvc area.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.PathReferenceAttribute">
+            <summary>
+                Indicates that parameter represents path reference.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.PathReferenceAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.PathReferenceAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.PathReferenceAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.PathReferenceAttribute"/> class.
+            </summary>
+            <param name="basePath">
+                The base path.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.PathReferenceAttribute.BasePath">
+            <summary>
+                Gets the base path.
+            </summary>
+            <value>
+                The base path.
+            </value>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.AspMvcAreaAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.AspMvcAreaAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.AspMvcAreaAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.AspMvcAreaAttribute"/> class.
+            </summary>
+            <param name="anonymousProperty">
+                The anonymous property.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.AspMvcAreaAttribute.AnonymousProperty">
+            <summary>
+                Gets the anonymous property.
+            </summary>
+            <value>
+                The anonymous property.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcControllerAttribute">
+            <summary>
+                Indicates asp.net mvc controller.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.AspMvcControllerAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.AspMvcControllerAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.AspMvcControllerAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.AspMvcControllerAttribute"/> class.
+            </summary>
+            <param name="anonymousProperty">
+                The anonymous property.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.AspMvcControllerAttribute.AnonymousProperty">
+            <summary>
+                Gets the anonymous property.
+            </summary>
+            <value>
+                The anonymous property.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcDisplayTemplateAttribute">
+            <summary>
+                Indicates asp.net mvc display template.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcEditorTemplateAttribute">
+            <summary>
+                Indicates asp.net mvc editor template.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcMasterAttribute">
+            <summary>
+                Indicates asp.net master page.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcModelTypeAttribute">
+            <summary>
+                Indicates asp.net mvc model.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcPartialViewAttribute">
+            <summary>
+                Indicates asp.net mvc partial view.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcSupressViewErrorAttribute">
+            <summary>
+                Indicates that asp.net mvc view errors should be suppressed.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.AspMvcViewAttribute">
+            <summary>
+                Indicates asp.net mvc view.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.BaseTypeRequiredAttribute">
+            <summary>
+                When applied to target attribute, specifies a requirement for any type which is marked with 
+                target attribute to implement or inherit specific type or types
+            </summary>
+            <example>
+                <code>
+                    [BaseTypeRequired(typeof(IComponent)] // Specify requirement
+                    public class ComponentAttribute : Attribute 
+                    {}
+            
+                    [Component] // ComponentAttribute requires implementing IComponent interface
+                    public class MyComponent : IComponent
+                    {}
+                </code>
+            </example>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.BaseTypeRequiredAttribute.#ctor(System.Type)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.BaseTypeRequiredAttribute"/> class.
+            </summary>
+            <param name="baseType">
+                Specifies which type is required.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.BaseTypeRequiredAttribute.BaseTypes">
+            <summary>
+                Gets enumerations of specified base types
+            </summary>
+            <value>
+                The base types.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.CanBeNullAttribute">
+            <summary>
+                Indicates that the value of marked element could be <see langword="null"/> sometimes,
+                so the check for <see langword="null"/> is necessary before its usage
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.CannotApplyEqualityOperatorAttribute">
+            <summary>
+                Indicates that the value of marked type (or its derivatives) cannot be compared using '==' or '!=' operators.
+                There is only exception to compare with <see langword="null"/>, it is permitted
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.ContractAnnotationAttribute">
+            <summary>
+                Describes dependency between method input and output.
+            </summary>
+            <syntax>
+                <p>Function definition table syntax:</p>
+                <list>
+                    <item>FDT      ::= FDTRow [;FDTRow]*</item>
+                    <item>FDTRow   ::= Input =&gt; Output | Output &lt;= Input</item>
+                    <item>Input    ::= ParameterName: Value [, Input]*</item>
+                    <item>Output   ::= [ParameterName: Value]* {halt|stop|void|nothing|Value}</item>
+                    <item>Value    ::= true | false | null | notnull | canbenull</item>
+                </list>
+                If method has single input parameter, it's name could be omitted. <br/>
+                Using "halt" (or "void"/"nothing", which is the same) for method output means that methos doesn't return normally.
+                "canbenull" annotation is only applicable for output parameters. <br/>
+                You can use multiple [ContractAnnotation] for each FDT row, or use single attribute with rows separated by semicolon.
+            </syntax>
+            <examples>
+                <list>
+                    <item>
+                        [ContractAnnotation("=> halt")] public void TerminationMethod().
+                    </item>
+                    <item>
+                        [ContractAnnotation("halt &lt;= condition: false")] public void Assert(bool condition, string text)
+                        // Regular Assertion method.
+                    </item>
+                    <item>
+                        [ContractAnnotation("s:null => true")] public bool IsNullOrEmpty(string s) // String.IsNullOrEmpty
+                    </item>
+                    <item>
+                        [ContractAnnotation("null => null; notnull => notnull")] public object Transform(object data)
+                        // Method which returns null if parameter is null, and not null if parameter is not null
+                    </item>
+                    <item>
+                        [ContractAnnotation("s:null=>false; =>true,result:notnull; =>false, result:null")]
+                        public bool TryParse(string s, out Person result).
+                    </item>
+                </list>
+            </examples>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.ContractAnnotationAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.ContractAnnotationAttribute"/> class.
+            </summary>
+            <param name="fdt">
+                The contract definition.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.ContractAnnotationAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.ContractAnnotationAttribute"/> class.
+            </summary>
+            <param name="fdt">
+                The contract definition.
+            </param>
+            <param name="forceFullStates">
+                If set to <see langword="true"/> then full states are forced.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.ContractAnnotationAttribute.FDT">
+            <summary>
+                Gets the contract definition.
+            </summary>
+            <value>
+                The contract definition.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.ContractAnnotationAttribute.ForceFullStates">
+            <summary>
+                Gets a value indicating whether full states are forced.
+            </summary>
+            <value>
+                <see langword="true" /> if full states are forced; otherwise, <see langword="false" />.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags">
+            <summary>
+                Indicates kind of implicit use.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags.Default">
+            <summary>
+                The default use.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags.Access">
+            <summary>
+                Only entity marked with attribute considered used
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags.Assign">
+            <summary>
+                Indicates implicit assignment to a member
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags.InstantiatedWithFixedConstructorSignature">
+            <summary>
+                Indicates implicit instantiation of a type with fixed constructor signature.
+                That means any unused constructor parameters won't be reported as such.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags.InstantiatedNoFixedConstructorSignature">
+            <summary>
+                Indicates implicit instantiation of a type
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.ImplicitUseTargetFlags">
+            <summary>
+                Indicates target of implicit use.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseTargetFlags.Default">
+            <summary>
+                Default implicit use.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseTargetFlags.Itself">
+            <summary>
+                The entity itself is used implicitly.
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseTargetFlags.Members">
+            <summary>
+                Members of entity marked with attribute are considered used
+            </summary>
+        </member>
+        <member name="F:ExulLibrary.Core.ResharperAnnotations.ImplicitUseTargetFlags.WithMembers">
+            <summary>
+                Entity marked with attribute and all its members considered used
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.InstantHandleAttribute">
+            <summary>
+                Tells code analysis engine if the parameter is completely handled when the invoked method is on stack. 
+                If the parameter is delegate, indicates that delegate is executed while the method is executed.
+                If the parameter is enumerable, indicates that it is enumerated while the method is executed.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.InvokerParameterNameAttribute">
+            <summary>
+                Indicates that the function argument should be string literal and match one of the parameters of the caller function.
+                For example, <see cref="T:System.ArgumentNullException"/> has such parameter.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute">
+            <summary>
+                Indicates that marked element should be localized or not.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute"/> class with
+                <see cref="P:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute.Required"/> set to <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute.#ctor(System.Boolean)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute"/> class.
+            </summary>
+            <param name="required">
+                <see langword="true"/> if a element should be localized; otherwise, <see langword="false"/>.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute.Equals(System.Object)">
+            <summary>
+                Returns whether the value of the given object is equal to the current <see cref="T:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute"/>.
+            </summary>
+            <param name="obj">
+                The object to test the value equality of.
+            </param>
+            <returns>
+                <see langword="true"/> if the value of the given object is equal to that of the current;
+                otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute.GetHashCode">
+            <summary>
+                Returns the hash code for this instance.
+            </summary>
+            <returns>
+                A hash code for the current <see cref="T:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute"/>.
+            </returns>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.LocalizationRequiredAttribute.Required">
+            <summary>
+                Gets a value indicating whether a element should be localized.
+            </summary>
+            <value>
+                <see langword="true"/> if a element should be localized; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.NotifyPropertyChangedInvocatorAttribute">
+            <summary>
+                Indicates that the function is used to notify class type property value is changed.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.NotifyPropertyChangedInvocatorAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.NotifyPropertyChangedInvocatorAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.NotifyPropertyChangedInvocatorAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.NotifyPropertyChangedInvocatorAttribute"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.NotifyPropertyChangedInvocatorAttribute.ParameterName">
+            <summary>
+                Gets the parameter name.
+            </summary>
+            <value>
+                The parameter name.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.NotNullAttribute">
+            <summary>
+                Indicates that the value of marked element could never be <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.PublicAPIAttribute">
+            <summary>
+                This attribute is intended to mark publicly available API which should not be removed and so is treated as used.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.PublicAPIAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.PublicAPIAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.PublicAPIAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.PublicAPIAttribute"/> class.
+            </summary>
+            <param name="comment">
+                The comment.
+            </param>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.PureAttribute">
+            <summary>
+                Indicates that method doesn't contain observable side effects.
+                The same as <see cref="T:System.Diagnostics.Contracts.PureAttribute"/>
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.RazorSectionAttribute">
+            <summary>
+                Indicates razor section.
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.StringFormatMethodAttribute">
+            <summary>
+                Indicates that marked method builds string by format pattern and (optional) arguments.
+                Parameter, which contains format string, should be given in constructor.
+                The format string should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/> -like form
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.StringFormatMethodAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.StringFormatMethodAttribute"/> class.
+            </summary>
+            <param name="formatParameterName">
+                Specifies which parameter of an annotated method should be treated as format-string.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.StringFormatMethodAttribute.FormatParameterName">
+            <summary>
+                Gets format parameter name.
+            </summary>
+            <value>
+                The name of the format parameter.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute">
+            <summary>
+                Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
+                so this symbol will not be marked as unused (as well as by other usage inspections).
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute.#ctor(ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags,ExulLibrary.Core.ResharperAnnotations.ImplicitUseTargetFlags)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute"/> class.
+            </summary>
+            <param name="useKindFlags">
+                The kind of implicit use.
+            </param>
+            <param name="targetFlags">
+                Value indicating what is meant to be used implicitly.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute.#ctor(ExulLibrary.Core.ResharperAnnotations.ImplicitUseKindFlags)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute"/> class.
+            </summary>
+            <param name="useKindFlags">
+                The kind of implicit use.
+            </param>
+        </member>
+        <member name="M:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute.#ctor(ExulLibrary.Core.ResharperAnnotations.ImplicitUseTargetFlags)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute"/> class.
+            </summary>
+            <param name="targetFlags">
+                Value indicating what is meant to be used implicitly.
+            </param>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute.TargetFlags">
+            <summary>
+                Gets value indicating what is meant to be used
+            </summary>
+            <value>
+                The target flags.
+            </value>
+        </member>
+        <member name="P:ExulLibrary.Core.ResharperAnnotations.UsedImplicitlyAttribute.UseKindFlags">
+            <summary>
+                Gets the kind of implicit use.
+            </summary>
+            <value>
+                The kind of implicit use.
+            </value>
+        </member>
+        <member name="T:ExulLibrary.Core.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.BaseTypeRequiredError">
+            <summary>
+              Looks up a localized string similar to The argument should be inherited from the required base type. Required base type: {0}. Actual base type: {1}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.ElementIndexIsOutOfRangeError">
+            <summary>
+              Looks up a localized string similar to The index is out of the expected range. Expected range: [{0},{1}]. Actual value: {2}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.EmptyCollectionError">
+            <summary>
+              Looks up a localized string similar to The collection is empty..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.GenericTypeDefinitionError">
+            <summary>
+              Looks up a localized string similar to Value of the parameter is generic type definition that isn&apos;t supported. Actual type name: {0}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.InterfaceRequiredError">
+            <summary>
+              Looks up a localized string similar to The argument should implement the required interface. Required interface: {0}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.InvalidSizeError">
+            <summary>
+              Looks up a localized string similar to The size parameter is negative or equal to zero. Actual value: {0}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.MissingParameterError">
+            <summary>
+              Looks up a localized string similar to The required parameter is not provided. Parameter name: {0}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.NoEnoughElementsError">
+            <summary>
+              Looks up a localized string similar to The specified collection contains no enough elements. Expected size: {0}. Actual size: {1}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.NonComparableTypeError">
+            <summary>
+              Looks up a localized string similar to Specified type has no default comparer and a custom comparer is not provided. Actual type: {0}..
+            </summary>
+        </member>
+        <member name="P:ExulLibrary.Core.Properties.Resources.ParameterTypeError">
+            <summary>
+              Looks up a localized string similar to The argument should have the expected type. Expected type: {0}. Actual type: {1}..
+            </summary>
+        </member>
+        <member name="T:ExulLibrary.Core.Properties.ResourceHelper">
+            <summary>
+                Provides helper methods to work with resources.
+            </summary>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.BaseTypeRequiredError(System.Type,System.Type)">
+            <summary>
+                Gets the error string when a parameter doesn't inherit required base type.
+            </summary>
+            <param name="requiredBaseType">
+                The required base type.
+            </param>
+            <param name="actualBaseType">
+                The actual base type.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.ElementIndexIsOutOfRangeError(System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Gets the error string when an index parameter is out of the expected range.
+            </summary>
+            <param name="minAcceptableValue">
+                The min acceptable value.
+            </param>
+            <param name="maxAcceptableValue">
+                The max acceptable value.
+            </param>
+            <param name="actualValue">
+                The actual value.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.EmptyCollectionError">
+            <summary>
+                Gets the error string when an empty collection is specified as value of parameter that doesn't support it.
+            </summary>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.GenericTypeDefinitionError(System.Type)">
+            <summary>
+                Gets the error string when generic type definition passed as value of parameter that doesn't support it.
+            </summary>
+            <param name="actualType">
+                The actual type.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.InterfaceRequiredError(System.Type)">
+            <summary>
+                Gets the error string when a parameter doesn't implement required interface.
+            </summary>
+            <param name="requiredInterfaceType">
+                The required interface type.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.InvalidSizeError(System.Int32)">
+            <summary>
+                Gets the error string when invalid value is specified as size.
+            </summary>
+            <param name="actualValue">
+                The actual value.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.MissingParameterError(System.String)">
+            <summary>
+                Gets the error string when a required parameter is not provided.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.NoEnoughElementError(System.Int32,System.Int32)">
+            <summary>
+                Gets the error string when a collection has no enough elements.
+            </summary>
+            <param name="minimalAcceptableLength">
+                The minimal acceptable length.
+            </param>
+            <param name="actualLength">
+                The actual length.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.NonComparableTypeError(System.Type)">
+            <summary>
+                Gets the error string when a non comparable type is specified as parameter.
+            </summary>
+            <param name="actualType">
+                The actual type.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:ExulLibrary.Core.Properties.ResourceHelper.ParameterTypeError(System.Type,System.Type)">
+            <summary>
+                Gets the error string when a parameter doesn't have expected type.
+            </summary>
+            <param name="expectedType">
+                The expected type.
+            </param>
+            <param name="actualType">
+                The actual type.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+    </members>
+</doc>

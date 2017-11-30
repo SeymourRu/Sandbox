@@ -1,0 +1,2996 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Exul.Mathematics.LinearAlgebra</name>
+    </assembly>
+    <members>
+        <member name="T:Exul.Mathematics.LinearAlgebra.AndIterationsStopCriterion`1">
+            <summary>
+                Represents a criterion to determine the end of an iteration process
+                that is satisfied when both underlying criteria are satisfied.
+            </summary>
+            <typeparam name="T">
+                The type of data.
+            </typeparam>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IterationsStopCriterion`1">
+            <summary>
+                Provides methods to determine the end of an iteration process.
+            </summary>
+            <typeparam name="T">
+                The type of data.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterationsStopCriterion`1.ShouldStop(Exul.Mathematics.LinearAlgebra.IterationData{`0})">
+            <summary>
+                Determines whether an iteration process should be stopped.
+            </summary>
+            <param name="data">
+                The data describing a current state of the iteration process.
+            </param>
+            <returns>
+                <see langword="true"/> if the iteration process should be stopped; otherwise, <see langword="false"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.AndIterationsStopCriterion`1.#ctor(Exul.Mathematics.LinearAlgebra.IterationsStopCriterion{`0},Exul.Mathematics.LinearAlgebra.IterationsStopCriterion{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.AndIterationsStopCriterion`1"/> class.
+            </summary>
+            <param name="left">
+                The first criterion to check.
+            </param>
+            <param name="right">
+                The second criterion to check.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="left"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="right"/> is <see langword="null"/>.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.AndIterationsStopCriterion`1.ShouldStop(Exul.Mathematics.LinearAlgebra.IterationData{`0})">
+            <summary>
+                Determines whether an iteration process should be stopped.
+            </summary>
+            <param name="data">
+                The data describing a current state of the iteration process.
+            </param>
+            <returns>
+                <see langword="true"/> if the iteration process should be stopped; otherwise, <see langword="false"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.AndIterationsStopCriterion`1.FirstCriterion">
+            <summary>
+                Gets the first criterion.
+            </summary>
+            <value>
+                The first criterion to check.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.AndIterationsStopCriterion`1.SecondCriterion">
+            <summary>
+                Gets the second criterion.
+            </summary>
+            <value>
+                The second criterion to check.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.ColumnDenseMatrix`1">
+            <summary>
+                Represents a dense matrix with the column-major two-dimensional storage.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.Matrix`1">
+            <summary>
+                Represents a matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Matrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Matrix`1.ColumnsCount">
+            <summary>
+                Gets or sets the number of columns.
+            </summary>
+            <value>
+                The number of columns.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Matrix`1.IsSquare">
+            <summary>
+                Gets a value indicating whether the matrix is square.
+            </summary>
+            <value>
+                <see langword="true"/> if the matrix is square; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Matrix`1.RowsCount">
+            <summary>
+                Gets or sets the number of rows.
+            </summary>
+            <value>
+                The number of rows.
+            </value>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.ColumnDenseMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ColumnDenseMatrix`1.#ctor(`0[][])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.ColumnDenseMatrix`1"/> class.
+            </summary>
+            <param name="data">
+                A collection of values of matrix elements in the column-major order.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    An element of <paramref name="data"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.EmptyCollectionException">
+                <paramref name="data"/> is empty.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    An element of <paramref name="data"/> is empty.
+                </para>
+            </exception>
+            <remarks>
+                Only the first element of <paramref name="data"/> is verified for nullness and emptyness.
+            </remarks>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnDenseMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnDenseMatrix`1.Values">
+            <summary>
+                Gets the collection of values of matrix elements in the column-major order.
+            </summary>
+            <value>
+                The collection of values of matrix elements in the column-major order.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.ColumnFlattenDenseMatrix`1">
+            <summary>
+                Represents a dense matrix with column-major flatten storage.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.ColumnFlattenDenseMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ColumnFlattenDenseMatrix`1.#ctor(System.Int32,System.Int32,`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.ColumnFlattenDenseMatrix`1"/> class.
+            </summary>
+            <param name="rowsCount">
+                The number of rows.
+            </param>
+            <param name="columnsCount">
+                The number of columns.
+            </param>
+            <param name="data">
+                A collection of values of matrix elements in the column-major order.
+            </param>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="rowsCount"/> is negative or equal to zero.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnsCount"/> is negative or equal to zero.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.NoEnoughElementsException">
+                <paramref name="data"/> is not <see langword="null"/> and
+                has less than <paramref name="rowsCount"/> * <paramref name="columnsCount"/> elements.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnFlattenDenseMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnFlattenDenseMatrix`1.Values">
+            <summary>
+                Gets the collection of values of matrix elements in the column-major order.
+            </summary>
+            <value>
+                The collection of values of matrix elements in the column-major order.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1">
+            <summary>
+                Represents a sparse matrix with the compressed column-major storage (CCS-format).
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1.#ctor(System.Int32,System.Int32,System.Int32[],System.Int32[],`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1"/> class.
+            </summary>
+            <param name="rowsCount">
+                The number of rows.
+            </param>
+            <param name="columnsCount">
+                The number of columns.
+            </param>
+            <param name="columnsBegins">
+                A collection of indexes of columns begins.
+            </param>
+            <param name="rowsIndexes">
+                A collection of zero-based indexes of rows of nonzero elements.
+            </param>
+            <param name="data">
+                A collection of values of nonzero elements.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="columnsBegins"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rowsIndexes"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="rowsCount"/> is negative or equal to zero.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnsCount"/> is negative or equal to zero.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.NoEnoughElementsException">
+                <paramref name="columnsBegins"/> has count of elements less than <paramref name="columnsCount"/> + 1.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rowsIndexes"/> has count of elements less than
+                    <paramref name="columnsBegins"/>[<paramref name="columnsCount"/>] - <paramref name="columnsBegins"/>[0].
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="data"/> is not <see langword="null"/> and has count of elements less than
+                    <paramref name="columnsBegins"/>[<paramref name="columnsCount"/>] - <paramref name="columnsBegins"/>[0].
+                </para>
+            </exception>
+            <remarks>
+                The elements of <paramref name="columnsBegins"/> should be nonnegative and
+                each element of <paramref name="columnsBegins"/> should be equal to or greater than it's previous element,
+                but both conditions aren't verified in the constructor.
+            </remarks>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1.ColumnsBegins">
+            <summary>
+                Gets A collection of indexes of columns begins.
+            </summary>
+            <value>
+                A collection of indexes of columns begins.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1.RowsIndexes">
+            <summary>
+                Gets A collection of zero-based indexes of rows of nonzero elements.
+            </summary>
+            <value>
+                A collection of zero-based indexes of rows of nonzero elements.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ColumnSparseMatrix`1.Values">
+            <summary>
+                Gets a collection of values of nonzero elements.
+            </summary>
+            <value>
+                A collection of values of nonzero elements.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithm">
+            <summary>
+                Indicates decomposition algorithm.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithm.Diagonal">
+            <summary>
+                Diagonal decomposition.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithm.LU">
+            <summary>
+                LU-decomposition. L is low triangular matrix. U is high triangular matrix with unit diagonal.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithm.LDLT">
+            <summary>
+                LDLT-decomposition. L is low triangular matrix with unit diagonal. D is diagonal matrix.
+            </summary>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException">
+            <summary>
+                Describes an error when a specified decomposition algorithm is not supported.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException.ActualValueSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException.ActualValue"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException.#ctor(System.String,Exul.Mathematics.LinearAlgebra.DecompositionAlgorithm,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="actualValue">
+                The actual value of parameter.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DecompositionAlgorithmNotSupportedException.ActualValue">
+            <summary>
+                Gets the actual value of parameter.
+            </summary>
+            <value>
+                The actual value of parameter.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.DecompositionMatrix`1">
+            <summary>
+                Represents a matrix after decomposition by an algorithm.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DecompositionMatrix`1.#ctor(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DecompositionAlgorithm)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DecompositionMatrix`1"/> class.
+            </summary>
+            <param name="matrix">
+                The decomposition matrix.
+            </param>
+            <param name="algorithm">
+                The decomposition algorithm.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+                <paramref name="matrix"/> is non-square matrix.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DecompositionMatrix`1.Algorithm">
+            <summary>
+                Gets the decomposition algorithm.
+            </summary>
+            <value>
+                The decomposition algorithm.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DecompositionMatrix`1.Matrix">
+            <summary>
+                Gets the decomposition matrix.
+            </summary>
+            <value>
+                The decomposition matrix.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1">
+            <summary>
+                Represents a dense symmetric matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1.#ctor(System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1"/> class.
+            </summary>
+            <param name="matrixSize">
+                The size of the matrix.
+            </param>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="matrixSize"/> is negative or equal to zero.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1.#ctor(`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1"/> class.
+            </summary>
+            <param name="data">
+                The collection of values of matrix elements.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.EmptyCollectionException">
+                <paramref name="data"/> is empty array.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DenseSymmetricMatrix`1.Values">
+            <summary>
+                Gets the collection of values of matrix elements.
+            </summary>
+            <value>
+                The collection of values of matrix elements.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.DenseVector`1">
+            <summary>
+                Represents a dense vector.
+            </summary>
+            <typeparam name="T">
+                The type of values of vector elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DenseVector`1.#ctor(System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DenseVector`1"/> class.
+            </summary>
+            <param name="length">
+                The length of the new <see cref="T:Exul.Mathematics.LinearAlgebra.DenseVector`1"/>.
+            </param>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="length"/> is negative or equal to zero.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DenseVector`1.#ctor(`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DenseVector`1"/> class.
+            </summary>
+            <param name="data">
+                The collection of values of vector elements.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.EmptyCollectionException">
+                <paramref name="data"/> is empty.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DenseVector`1.Length">
+            <summary>
+                Gets the number of elements in the vector.
+            </summary>
+            <value>
+                The number of elements in the vector.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DenseVector`1.Values">
+            <summary>
+                Gets the collection of values of vector elements.
+            </summary>
+            <value>
+                The collection of values of vector elements.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1">
+            <summary>
+                Represents a diagonal matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1.#ctor(System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1"/> class.
+            </summary>
+            <param name="size">
+                The size of the matrix.
+            </param>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="size"/> is negative or equal to zero.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1.#ctor(`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1"/> class.
+            </summary>
+            <param name="data">
+                The collection of values of diagonal elements.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.EmptyCollectionException">
+                <paramref name="data"/> is empty.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.DiagonalMatrix`1.Values">
+            <summary>
+                Gets the collection of values of diagonal elements.
+            </summary>
+            <value>
+                The collection of values of diagonal elements.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.EquationSystemSolver`1">
+            <summary>
+                Represents a solver of system of linear algebraic equations.
+            </summary>
+            <typeparam name="T">
+                The type of values of elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.EquationSystemSolver`1.SolveSystem(Exul.Mathematics.LinearAlgebra.EquationSystem{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves the specified system.
+            </summary>
+            <param name="system">
+                The system to solve.
+            </param>
+            <param name="solution">
+                The vector to store the solution.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.EquationSystemSolver`1.Solve(Exul.Mathematics.LinearAlgebra.EquationSystem{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves a specified system.
+            </summary>
+            <param name="system">
+                The system to solve.
+            </param>
+            <param name="solution">
+                The vector to store the solution.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="system"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="solution"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException">
+                <paramref name="system"/> and <paramref name="solution"/> dimensions are incompatible.
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.EquationSystem`1">
+            <summary>
+                Represents a system of linear algebraic equations.
+            </summary>
+            <typeparam name="T">
+                The type of elements of the system.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.EquationSystem`1.#ctor(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.EquationSystem`1"/> class.
+            </summary>
+            <param name="matrix">
+                The matrix of the system.
+            </param>
+            <param name="rightHandPart">
+                The right-hand part of the system.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rightHandPart"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+                <paramref name="matrix"/> is a non-square matrix.
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException">
+                <paramref name="matrix"/> and <paramref name="rightHandPart"/> have incompatible dimensions.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.EquationSystem`1.Matrix">
+            <summary>
+                Gets the matrix of the system.
+            </summary>
+            <value>
+                The matrix of the system.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.EquationSystem`1.RightHandPart">
+            <summary>
+                Gets the right-hand part of the system.
+            </summary>
+            <value>
+                The right-hand part of the system.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.EquationSystem`1.Size">
+            <summary>
+                Gets the size of the system.
+            </summary>
+            <value>
+                The size of the system.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IClearMatrixOperations">
+            <summary>
+                Provides operations to clear whole matrix or some part of matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IClearMatrixOperations.Clear``1(Exul.Mathematics.LinearAlgebra.Matrix{``0})">
+            <summary>
+                Sets the default value to all elements of the matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+            <param name="matrix">
+                The matrix that contains elements to clear.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IClearMatrixOperations.ClearColumn``1(Exul.Mathematics.LinearAlgebra.Matrix{``0},System.Int32)">
+            <summary>
+                Sets the default value to all elements in the specified column of the matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+            <param name="matrix">
+                The matrix that contains the column to clear.
+            </param>
+            <param name="columnIndex">
+                The zero-based index of the column to clear.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.ElementIndexIsOutOfRangeException">
+                <paramref name="columnIndex"/> is negative or greater than or equal to columns count.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IClearMatrixOperations.ClearRow``1(Exul.Mathematics.LinearAlgebra.Matrix{``0},System.Int32)">
+            <summary>
+                Sets the default value to all elements in the specified row of the matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+            <param name="matrix">
+                The matrix that contains the row to clear.
+            </param>
+            <param name="rowIndex">
+                The zero-based index of the row to clear.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.ElementIndexIsOutOfRangeException">
+                <paramref name="rowIndex"/> is negative or greater than or equal to rows count.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.ICloneMatrixOperations">
+            <summary>
+                Provides methods to clone a matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ICloneMatrixOperations.Clone``1(Exul.Mathematics.LinearAlgebra.Matrix{``0})">
+            <summary>
+                Creates a deep copy of the matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+            <param name="source">
+                The source matrix.
+            </param>
+            <returns>
+                A deep copy of the matrix.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="source"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="!:ParameterTypeException">
+                <paramref name="source"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IMatrixFactorOperations`1">
+            <summary>
+                Provides operations for matrix and factor like addition/multiplication of matrix with/by factor.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixFactorOperations`1.Add(Exul.Mathematics.LinearAlgebra.Matrix{`0},`0)">
+            <summary>
+                Adds the specified factor to all elements of the matrix.
+            </summary>
+            <param name="matrix">
+                The matrix whose elements should be added.
+            </param>
+            <param name="factor">
+                The factor to add.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixFactorOperations`1.Multiply(Exul.Mathematics.LinearAlgebra.Matrix{`0},`0)">
+            <summary>
+                Multiplies all elements of the matrix by the specified factor.
+            </summary>
+            <param name="matrix">
+                The matrix whose elements should be multiplied.
+            </param>
+            <param name="factor">
+                The factor to multiply.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IMatrixMatrixOperations`1">
+            <summary>
+                Provides methods to add and to subtract matrices.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixMatrixOperations`1.Add(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.Matrix{`0})">
+            <summary>
+                Adds the second matrix to the first matrix.
+            </summary>
+            <param name="augend">
+                The augend matrix.
+            </param>
+            <param name="addend">
+                The addend matrix.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="augend"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="augend"/> has type different from the expected.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> has type different from the expected.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixMatrixOperations`1.Add(Exul.Mathematics.LinearAlgebra.Matrix{`0},`0,Exul.Mathematics.LinearAlgebra.Matrix{`0})">
+            <summary>
+                Adds the second matrix to the first matrix multiplied by the factor.
+            </summary>
+            <param name="augend">
+                The augend matrix.
+            </param>
+            <param name="augendFactor">
+                The factor of the augend matrix.
+            </param>
+            <param name="addend">
+                The addend matrix.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="augend"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="augend"/> has type different from the expected.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> has type different from the expected.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixMatrixOperations`1.Add(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.Matrix{`0},`0)">
+            <summary>
+                Adds the second matrix multiplied by the factor to the first matrix.
+            </summary>
+            <param name="augend">
+                The augend matrix.
+            </param>
+            <param name="addend">
+                The addend matrix.
+            </param>
+            <param name="addendFactor">
+                The factor of the addend matrix.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="augend"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="augend"/> has type different from the expected.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> has type different from the expected.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixMatrixOperations`1.Add(Exul.Mathematics.LinearAlgebra.Matrix{`0},`0,Exul.Mathematics.LinearAlgebra.Matrix{`0},`0)">
+            <summary>
+                Adds the second matrix multiplied by the second factor to the first matrix multiplied by the first factor.
+            </summary>
+            <param name="augend">
+                The augend matrix.
+            </param>
+            <param name="augendFactor">
+                The factor of the augend matrix.
+            </param>
+            <param name="addend">
+                The addend matrix.
+            </param>
+            <param name="addendFactor">
+                The factor of the addend matrix.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="augend"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="augend"/> has type different from the expected.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="addend"/> has type different from the expected.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixMatrixOperations`1.Subtract(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.Matrix{`0})">
+            <summary>
+                Subtracts the second matrix from the first matrix.
+            </summary>
+            <param name="minuend">
+                The minuend matrix.
+            </param>
+            <param name="subtrahend">
+                The subtrahend matrix.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="minuend"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="subtrahend"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="minuend"/> has type different from the expected.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="subtrahend"/> has type different from the expected.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixMatrixOperations`1.Subtract(Exul.Mathematics.LinearAlgebra.Matrix{`0},`0,Exul.Mathematics.LinearAlgebra.Matrix{`0})">
+            <summary>
+                Subtracts the second matrix from the first matrix multiplied by the factor.
+            </summary>
+            <param name="minuend">
+                The minuend matrix.
+            </param>
+            <param name="minuendFactor">
+                The factor of the minuend matrix.
+            </param>
+            <param name="subtrahend">
+                The subtrahend matrix.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="minuend"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="subtrahend"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="minuend"/> has type different from the expected.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="subtrahend"/> has type different from the expected.
+                </para>
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IMatrixOperations">
+            <summary>
+                Provides common operations for a matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixOperations.GetAt``1(Exul.Mathematics.LinearAlgebra.Matrix{``0},System.Int32,System.Int32)">
+            <summary>
+                Gets the element in the matrix at the specified location.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+            <param name="matrix">
+                The matrix that contains the element to get.
+            </param>
+            <param name="rowIndex">
+                The zero-based index of row of the element to get.
+            </param>
+            <param name="columnIndex">
+                The zero-based index of column of the element to get.
+            </param>
+            <returns>
+                The element in the matrix at the specified location.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.ElementIndexIsOutOfRangeException">
+                <paramref name="rowIndex"/> is negative or greater than or equal to
+                the number of rows of <paramref name="matrix"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnIndex"/> is negative or greater than or equal to
+                    the number of columns of <paramref name="matrix"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixOperations.SetAt``1(Exul.Mathematics.LinearAlgebra.Matrix{``0},``0,System.Int32,System.Int32)">
+            <summary>
+                Sets the element in the matrix at the specified location.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+            <param name="matrix">
+                The matrix that contains the element to set.
+            </param>
+            <param name="newValue">
+                The new value for the element.
+            </param>
+            <param name="rowIndex">
+                The zero-based index of row of the element to set.
+            </param>
+            <param name="columnIndex">
+                The zero-based index of column of the element to set.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.ElementIndexIsOutOfRangeException">
+                <paramref name="rowIndex"/> is negative or greater than or equal to
+                the number of rows of <paramref name="matrix"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnIndex"/> is negative or greater than or equal to
+                    the number of columns of <paramref name="matrix"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException">
+                <paramref name="rowIndex"/> and <paramref name="columnIndex"/> specifies a readonly element.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IMatrixVectorOperations`1">
+            <summary>
+                Provides methods to add/multiply a matrix with/by a vector.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IMatrixVectorOperations`1.Multiply(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Multiplies the matrix by the dense vector and stores the result in an another vector.
+            </summary>
+            <param name="multiplicand">
+                The multiplicand matrix.
+            </param>
+            <param name="multiplier">
+                The multiplier vector.
+            </param>
+            <param name="result">
+                The vector to store the result.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="multiplicand"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="multiplier"/> is <see langword="null"/>.
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="result"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="multiplicand"/> has type different from the expected.
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException">
+            <summary>
+                Describes an error when two matrices have incompatible dimensions for some operation.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixColumnsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixColumnsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixParameterNameSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixParameterName"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixRowsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixRowsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixColumnsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixColumnsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixExpectedColumnsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixExpectedColumnsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixExpectedRowsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixExpectedRowsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixParameterNameSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixParameterName"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixRowsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixRowsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.#ctor(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException"/> class.
+            </summary>
+            <param name="firstMatrixParameterName">
+                The name of the first matrix parameter.
+            </param>
+            <param name="firstMatrixRowsCount">
+                The rows count of the first matrix.
+            </param>
+            <param name="firstMatrixColumnsCount">
+                The columns count of the first matrix.
+            </param>
+            <param name="secondMatrixParameterName">
+                The name of the second matrix parameter.
+            </param>
+            <param name="secondMatrixRowsCount">
+                The rows count of the second matrix.
+            </param>
+            <param name="secondMatrixColumnsCount">
+                The columns count of the second matrix.
+            </param>
+            <param name="secondMatrixExpectedRowsCount">
+                The expected rows count of the second matrix.
+            </param>
+            <param name="secondMatrixExpectedColumnsCount">
+                The expected columns count of the second matrix.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixColumnsCount">
+            <summary>
+                Gets the columns count of the first matrix.
+            </summary>
+            <value>
+                The columns count of the first matrix.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixParameterName">
+            <summary>
+                Gets the name of the first matrix parameter.
+            </summary>
+            <value>
+                The name of the first matrix parameter.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.FirstMatrixRowsCount">
+            <summary>
+                Gets the rows count of the first matrix.
+            </summary>
+            <value>
+                The rows count of the first matrix.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixColumnsCount">
+            <summary>
+                Gets the columns count of the second matrix.
+            </summary>
+            <value>
+                The columns count of the second matrix.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixExpectedColumnsCount">
+            <summary>
+                Gets the expected columns count of the second matrix.
+            </summary>
+            <value>
+                The expected columns count of the second matrix.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixExpectedRowsCount">
+            <summary>
+                Gets the expected rows count of the second matrix.
+            </summary>
+            <value>
+                The expected rows count of the second matrix.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixParameterName">
+            <summary>
+                Gets the name of the second matrix parameter.
+            </summary>
+            <value>
+                The name of the second matrix parameter.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException.SecondMatrixRowsCount">
+            <summary>
+                Gets the rows count of the second matrix.
+            </summary>
+            <value>
+                The rows count of the second matrix.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException">
+            <summary>
+                Describes an error when matrix and vector have incompatible dimensions for an operation.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.ExpectedVectorLengthSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.ExpectedVectorLength"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixColumnsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixColumnsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixParameterNameSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixParameterName"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixRowsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixRowsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.VectorLengthSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.VectorLength"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.VectorParameterNameSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.VectorParameterName"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.#ctor(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException"/> class.
+            </summary>
+            <param name="matrixParameterName">
+                The name of matrix parameter.
+            </param>
+            <param name="matrixRowsCount">
+                The rows count of matrix.
+            </param>
+            <param name="matrixColumnsCount">
+                The columns count of matrix.
+            </param>
+            <param name="vectorParameterName">
+                The name of the vector parameter.
+            </param>
+            <param name="vectorLength">
+                The length of vector.
+            </param>
+            <param name="expectedVectorLength">
+                The expected length of vector.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.ExpectedVectorLength">
+            <summary>
+                Gets the expected length of vector.
+            </summary>
+            <value>
+                The expected length of vector.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixColumnsCount">
+            <summary>
+                Gets the columns count of matrix.
+            </summary>
+            <value>
+                The columns count of matrix.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixParameterName">
+            <summary>
+                Gets the name of matrix parameter.
+            </summary>
+            <value>
+                The name of matrix parameter.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.MatrixRowsCount">
+            <summary>
+                Gets the rows count of matrix.
+            </summary>
+            <value>
+                The rows count of matrix.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.VectorLength">
+            <summary>
+                Gets the length of vector.
+            </summary>
+            <value>
+                The length of vector.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException.VectorParameterName">
+            <summary>
+                Gets the name of vector parameter.
+            </summary>
+            <value>
+                The name of vector parameter.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IterationData`1">
+            <summary>
+                Represents data about iteration of a solver.
+            </summary>
+            <typeparam name="T">
+                The type of elements of a system that is solving by the solver.
+            </typeparam>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IterationData`1.Iteration">
+            <summary>
+                Gets or sets the index of the iteration.
+            </summary>
+            <value>
+                The index of the iterations.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IterationData`1.Residual">
+            <summary>
+                Gets or sets the residual of the solution on the iteration.
+            </summary>
+            <value>
+                The residual of the solution on the iteration.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IterationsCountStopCriterion`1">
+            <summary>
+                Provides methods to determine the end of an iteration process using the count of iterations.
+            </summary>
+            <typeparam name="T">
+                The type of data.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterationsCountStopCriterion`1.#ctor(System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.IterationsCountStopCriterion`1"/> class.
+            </summary>
+            <param name="maxIterationsCount">
+                The max iterations count.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterationsCountStopCriterion`1.ShouldStop(Exul.Mathematics.LinearAlgebra.IterationData{`0})">
+            <summary>
+                Determines whether an iteration process should be stopped.
+            </summary>
+            <param name="data">
+                The data describing a current state of the iteration process.
+            </param>
+            <returns>
+                <see langword="true"/> if the iteration process should be stopped; otherwise, <see langword="false"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IterationsCountStopCriterion`1.MaxIterationsCount">
+            <summary>
+                Gets the max iterations count.
+            </summary>
+            <value>
+                The max iterations count.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1">
+            <summary>
+                Represents an iterative solver of a system of linear algebraic equations.
+            </summary>
+            <typeparam name="T">
+                The type of value of elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.SolveSystem(Exul.Mathematics.LinearAlgebra.EquationSystem{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves the specified system without preconditioning.
+            </summary>
+            <param name="system">
+                The system to solve.
+            </param>
+            <param name="solution">
+                The vector to store the solution.
+            </param>
+            <param name="initialSolution">
+                The initial solution.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.SolveSystem(Exul.Mathematics.LinearAlgebra.EquationSystem{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0},Exul.Mathematics.LinearAlgebra.DecompositionMatrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves the specified system with the specified preconditioning matrix.
+            </summary>
+            <param name="system">
+                The system to solve.
+            </param>
+            <param name="solution">
+                The vector to store the solution.
+            </param>
+            <param name="preconditioningMatrix">
+                The preconditioning matrix.
+            </param>
+            <param name="initialSolution">
+                The initial solution.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.Initialize(System.Int32,Exul.Mathematics.LinearAlgebra.IterationsStopCriterion{`0},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+                Initializes the solver.
+            </summary>
+            <param name="targetSize">
+                The size of the target system to solve.
+            </param>
+            <param name="stopCriterion">
+                The stop criterion.
+            </param>
+            <param name="parameters">
+                The key-value collection of additional parameters for the solver.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="stopCriterion"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="targetSize"/> is negative or equal to zero.
+            </exception>
+            <exception cref="T:Exul.Core.MissingParameterException">
+                <paramref name="parameters"/> doesn't contain all required parameters.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.SolveSystem(Exul.Mathematics.LinearAlgebra.EquationSystem{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves the specified system.
+            </summary>
+            <param name="system">
+                The system to solve.
+            </param>
+            <param name="solution">
+                The vector to store the solution.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.Solve(Exul.Mathematics.LinearAlgebra.EquationSystem{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0},Exul.Mathematics.LinearAlgebra.DecompositionMatrix{`0})">
+            <summary>
+                Solves the specified system.
+            </summary>
+            <param name="system">
+                The system to solve.
+            </param>
+            <param name="solution">
+                The vector to store the solution.
+            </param>
+            <param name="initialSolution">
+                The initial solution.
+            </param>
+            <param name="preconditioningMatrix">
+                The preconditioning matrix.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="system"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="solution"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="system"/> has size incompatible with the initialized target size.
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixVectorException">
+                <paramref name="solution"/> is not <see langword="null"/> and
+                has length incompatible with <paramref name="system"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="initialSolution"/> is not <see langword="null"/> and
+                    has length incompatible with <paramref name="system"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.IncompatibleMatrixMatrixException">
+                <paramref name="preconditioningMatrix"/> is not <see langword="null"/> and
+                has size incompatible with <paramref name="system"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.IsInitialized">
+            <summary>
+                Gets a value indicating whether this instance is initialized.
+            </summary>
+            <value>
+                <see langword="true"/> if this instance is initialized; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.StopCriterion">
+            <summary>
+                Gets the stop criterion.
+            </summary>
+            <value>
+                The stop criterion.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.IterativeEquationSystemSolver`1.TargetSize">
+            <summary>
+                Gets the size of the target system to solve.
+            </summary>
+            <value>
+                The size of the target system to solve.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.ITriangularMatrixOperations`1">
+            <summary>
+                Provides operations to solve a system of equations with a triangular matrix or triangular part of a matrix.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ITriangularMatrixOperations`1.SolveWithDiagonal(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves a system of linear algebraic equations with the specified matrix and the right-hand part and
+                stores the result in the right-hand part vector.
+            </summary>
+            <param name="matrix">
+                The matrix of system.
+            </param>
+            <param name="rightHandPart">
+                The right-hand part vector as input and the result vector as output.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see lagnword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rightHandPart"/> is <see lagnword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+                <paramref name="matrix"/> is non-square matrix.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+            <remarks>
+                The size of system to solve is determined as minimal value from size of <paramref name="matrix"/> and
+                length of <paramref name="rightHandPart"/>.
+            </remarks>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ITriangularMatrixOperations`1.SolveWithHighTriangle(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves a system of linear algebraic equations with the specified matrix and the right-hand part and
+                stores the result in the right-hand part vector.
+            </summary>
+            <param name="matrix">
+                The matrix of system.
+            </param>
+            <param name="rightHandPart">
+                The right-hand part vector as input and the result vector as output.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see lagnword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rightHandPart"/> is <see lagnword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+                <paramref name="matrix"/> is non-square matrix.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+            <remarks>
+                The size of system to solve is determined as minimal value from columns count of <paramref name="matrix"/> and
+                length of <paramref name="rightHandPart"/>.
+            </remarks>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ITriangularMatrixOperations`1.SolveWithHighTriangleAndDiagonal(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves a system of linear algebraic equations with the specified matrix and the right-hand part and
+                stores the result in the right-hand part vector.
+            </summary>
+            <param name="matrix">
+                The matrix of system.
+            </param>
+            <param name="rightHandPart">
+                The right-hand part vector as input and the result vector as output.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see lagnword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rightHandPart"/> is <see lagnword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+                <paramref name="matrix"/> is non-square matrix.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+            <remarks>
+                The size of system to solve is determined as minimal value from columns count of <paramref name="matrix"/> and
+                length of <paramref name="rightHandPart"/>.
+            </remarks>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ITriangularMatrixOperations`1.SolveWithLowTriangle(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves a system of linear algebraic equations with the specified matrix and the right-hand part and
+                stores the result in the right-hand part vector.
+            </summary>
+            <param name="matrix">
+                The matrix of system.
+            </param>
+            <param name="rightHandPart">
+                The right-hand part vector as input and the result vector as output.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see lagnword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rightHandPart"/> is <see lagnword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+                <paramref name="matrix"/> is non-square matrix.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+            <remarks>
+                The size of system to solve is determined as minimal value from rows count of <paramref name="matrix"/> and
+                length of <paramref name="rightHandPart"/>.
+            </remarks>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ITriangularMatrixOperations`1.SolveWithLowTriangleAndDiagonal(Exul.Mathematics.LinearAlgebra.Matrix{`0},Exul.Mathematics.LinearAlgebra.DenseVector{`0})">
+            <summary>
+                Solves a system of linear algebraic equations with the specified matrix and the right-hand part and
+                stores the result in the right-hand part vector.
+            </summary>
+            <param name="matrix">
+                The matrix of system.
+            </param>
+            <param name="rightHandPart">
+                The right-hand part vector as input and the result vector as output.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrix"/> is <see lagnword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="rightHandPart"/> is <see lagnword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+                <paramref name="matrix"/> is non-square matrix.
+            </exception>
+            <exception cref="T:Exul.Core.ParameterTypeException">
+                <paramref name="matrix"/> has type different from the expected.
+            </exception>
+            <remarks>
+                The size of system to solve is determined as minimal value from rows count of <paramref name="matrix"/> and
+                length of <paramref name="rightHandPart"/>.
+            </remarks>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.MatrixTypesCatalog">
+            <summary>
+                Provides methods to register and uniquely identify type of a matrix.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.MatrixTypesCatalog._matrixTypeName">
+            <summary>
+                The name of base type for all matrices.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.MatrixTypesCatalog._matrixTypes">
+            <summary>
+                The collection of registered types of matrices.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.MatrixTypesCatalog._sync">
+            <summary>
+                Private object to organize synchronization.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.MatrixTypesCatalog.GetMatrixRegistrationIndex(System.Type)">
+            <summary>
+                Gets the registration index of the matrix.
+            </summary>
+            <param name="matrixType">
+                The type of the matrix.
+            </param>
+            <returns>
+                The registration index of the matrix.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="matrixType"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Exul.Core.GenericTypeDefinitionException">
+                <paramref name="matrixType"/> represents is generic type definition.
+            </exception>
+            <exception cref="T:Exul.Core.BaseTypeRequiredException">
+                <paramref name="matrixType"/> is not inherited from <see cref="T:Exul.Mathematics.LinearAlgebra.Matrix`1"/>.
+            </exception>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException">
+            <summary>
+                Describes an error when a non-square matrix is passed as value of parameter that doesn't support it.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.ActualColumnsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.ActualColumnsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.ActualRowsCountSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.ActualRowsCount"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.#ctor(System.String,System.Int32,System.Int32,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="actualRowsCount">
+                The actual count of rows.
+            </param>
+            <param name="actualColumnsCount">
+                The actual count of columns.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.ActualColumnsCount">
+            <summary>
+                Gets the actual count of columns.
+            </summary>
+            <value>
+                The actual count of columns.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.NonSquareMatrixException.ActualRowsCount">
+            <summary>
+                Gets the actual count of rows.
+            </summary>
+            <value>
+                The actual count of rows.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException">
+            <summary>
+                Describes an error when operations provider required for some operations is not found.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.ParameterTypeSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.ParameterType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.ProviderTypeSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.ProviderType"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.#ctor(System.String,System.Type,System.Type,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException"/> class.
+            </summary>
+            <param name="parameterName">
+                The parameter name.
+            </param>
+            <param name="parameterType">
+                The actual type of parameter.
+            </param>
+            <param name="providerType">
+                The type of required provider.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="parameterType"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="providerType"/> is <see langword="null"/>.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> with information about the exception.
+            </summary>
+            <param name="info">
+                The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.
+            </param>
+            <param name="context">
+                The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.Message">
+            <summary>
+                Gets a message that describes the current exception.
+            </summary>
+            <value>
+                The error message that explains the reason for the exception, or an empty string.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.ParameterType">
+            <summary>
+                Gets the actual type of parameter.
+            </summary>
+            <value>
+                The actual type of parameter.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.OperationsProviderNotFoundException.ProviderType">
+            <summary>
+                Gets the type of required provider.
+            </summary>
+            <value>
+                The type of required provider.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.OrIterationsStopCriterion`1">
+            <summary>
+                Represents a criterion to determine the end of an iteration process
+                that is satisfied when one of two underlying criteria is satisfied.
+            </summary>
+            <typeparam name="T">
+                The type of data.
+            </typeparam>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.OrIterationsStopCriterion`1.#ctor(Exul.Mathematics.LinearAlgebra.IterationsStopCriterion{`0},Exul.Mathematics.LinearAlgebra.IterationsStopCriterion{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.OrIterationsStopCriterion`1"/> class.
+            </summary>
+            <param name="left">
+                The first criterion to check.
+            </param>
+            <param name="right">
+                The second criterion to check.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="left"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="right"/> is <see langword="null"/>.
+                </para>
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.OrIterationsStopCriterion`1.ShouldStop(Exul.Mathematics.LinearAlgebra.IterationData{`0})">
+            <summary>
+                Determines whether an iteration process should be stopped.
+            </summary>
+            <param name="data">
+                The data describing a current state of the iteration process.
+            </param>
+            <returns>
+                <see langword="true"/> if the iteration process should be stopped; otherwise, <see langword="false"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.OrIterationsStopCriterion`1.FirstCriterion">
+            <summary>
+                Gets the first criterion.
+            </summary>
+            <value>
+                The first criterion to check.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.OrIterationsStopCriterion`1.SecondCriterion">
+            <summary>
+                Gets the second criterion.
+            </summary>
+            <value>
+                The second criterion to check.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.DecompositionAlgorithmNotSupportedError">
+            <summary>
+              Looks up a localized string similar to The parameter specifies the decomposition algorithm that is not supported by this operation. Actual value: {0}..
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.IncompatibleMatrixMatrixError">
+            <summary>
+              Looks up a localized string similar to {0} and {1} have incompatible dimensions. {0} has size equal to {2}x{3}. {1} has size equal to {4}x{5}, but should have {6}x{7}..
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.IncompatibleMatrixVectorError">
+            <summary>
+              Looks up a localized string similar to {0} and {1} have incompatible dimensions. {0} has size equal to {2}x{3}. {1} has length equal to {4}, but should have {5}..
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.NonSquareMatrixError">
+            <summary>
+              Looks up a localized string similar to Non-square matrix is not supported as value of the parameter. Actual matrix size: {0}x{1}..
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.OperationsProviderNotFoundError">
+            <summary>
+              Looks up a localized string similar to A provider that implements {0} interface to perform operations with arguments of {1} type is not found..
+            </summary>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.Properties.Resources.ReadOnlyMatrixElementError">
+            <summary>
+              Looks up a localized string similar to {0} and {1} specifies a read-only element of the matrix. Element location: [{2},{3}]..
+            </summary>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.Properties.ResourceHelper">
+            <summary>
+                Provides methods to access to the resources.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.Properties.ResourceHelper.DecompositionAlgorithmNotSupportedError(Exul.Mathematics.LinearAlgebra.DecompositionAlgorithm)">
+            <summary>
+                Gets the error string when the parameter specifies the decomposition algorithm that is not supported.
+            </summary>
+            <param name="actualValue">
+                The actual value.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.Properties.ResourceHelper.IncompatibleMatrixMatrixError(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Gets the error string when matrix and matrix are incompatible.
+            </summary>
+            <param name="firstMatrixParameterName">
+                First name of the matrix parameter.
+            </param>
+            <param name="firstMatrixRowsCount">
+                The first matrix rows count.
+            </param>
+            <param name="firstMatrixColumnsCount">
+                The first matrix columns count.
+            </param>
+            <param name="secondMatrixParameterName">
+                Name of the second matrix parameter.
+            </param>
+            <param name="secondMatrixActualRowsCount">
+                The second matrix actual rows count.
+            </param>
+            <param name="secondMatrixActualColumnsCount">
+                The second matrix actual columns count.
+            </param>
+            <param name="secondMatrixExpectedRowsCount">
+                The second matrix expected rows count.
+            </param>
+            <param name="secondMatrixExpectedColumnsCount">
+                The second matrix expected columns count.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.Properties.ResourceHelper.IncompatibleMatrixVectorError(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+                Gets the error string when matrix and vector are incompatible.
+            </summary>
+            <param name="matrixParameterName">
+                Name of the matrix parameter.
+            </param>
+            <param name="matrixRowsCount">
+                The matrix rows count.
+            </param>
+            <param name="matrixColumnsCount">
+                The matrix columns count.
+            </param>
+            <param name="vectorParameterName">
+                Name of the vector parameter.
+            </param>
+            <param name="vectorActualLength">
+                Actual length of the vector.
+            </param>
+            <param name="vectorExpectedLength">
+                Expected length of the vector.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.Properties.ResourceHelper.NonSquareMatrixError(System.Int32,System.Int32)">
+            <summary>
+                Gets the error string when a non-square matrix is passed as value of parameter that doesn't support it.
+            </summary>
+            <param name="actualRowsCount">
+                The actual rows count.
+            </param>
+            <param name="actualColumnsCount">
+                The actual columns count.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.Properties.ResourceHelper.OperationsProviderNotFoundError(System.Type,System.Type)">
+            <summary>
+                Gets the error string when a required operations provider is not found.
+            </summary>
+            <param name="interfaceType">
+                Type of the required interface.
+            </param>
+            <param name="elementType">
+                Type of the elements.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.Properties.ResourceHelper.ReadOnlyMatrixElementError(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+                Gets the error string when code tries to modify a read only matrix element.
+            </summary>
+            <param name="rowIndexParameterName">
+                Name of the row index parameter.
+            </param>
+            <param name="rowIndex">
+                The row index.
+            </param>
+            <param name="columnIndexParameterName">
+                Name of the column index parameter.
+            </param>
+            <param name="columnIndex">
+                The column index.
+            </param>
+            <returns>
+                The error string.
+            </returns>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException">
+            <summary>
+                Describes an error when a code tries to modify a read only matrix element.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ColumnIndexParameterNameSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ColumnIndexParameterName"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ElementColumnIndexSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ElementColumnIndex"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ElementRowIndexSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ElementRowIndex"/> property to serialize.
+            </summary>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.RowIndexParameterNameSerializationName">
+            <summary>
+                The name of <see cref="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.RowIndexParameterName"/> property to serialize.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.#ctor(System.String,System.String,System.String,System.Int32,System.Int32,System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException"/> class.
+            </summary>
+            <param name="matrixParameterName">
+                The name of parameter that represents the matrix.
+            </param>
+            <param name="rowIndexParameterName">
+                The name of parameter that represents the row index of element.
+            </param>
+            <param name="columnIndexParameterName">
+                The name of parameter that represents the column index of element.
+            </param>
+            <param name="elementRowIndex">
+                The row index of element.
+            </param>
+            <param name="elementColumnIndex">
+                The column index of element.
+            </param>
+            <param name="innerException">
+                The inner exception.
+            </param>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException"/> class.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the parameter name and additional exception information.
+            </summary>
+            <param name="info">
+                The object that holds the serialized object data.
+            </param>
+            <param name="context">
+                The contextual information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="info"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.Message">
+            <summary>
+                Gets the error message and the parameter name, or only the error message if no parameter name is set.
+            </summary>
+            <value>
+                A text string describing the details of the exception.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ColumnIndexParameterName">
+            <summary>
+                Gets the name of parameter that represents the column index of element.
+            </summary>
+            <value>
+                The name of parameter that represents the column index of element.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ElementColumnIndex">
+            <summary>
+                Gets the column index of element.
+            </summary>
+            <value>
+                The column index of element.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.ElementRowIndex">
+            <summary>
+                Gets the row index of element.
+            </summary>
+            <value>
+                The row index of element.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ReadOnlyMatrixElementException.RowIndexParameterName">
+            <summary>
+                Gets the name of parameter that represents the row index of element.
+            </summary>
+            <value>
+                The name of parameter that represents the row index of element.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.ResidualStopCriterion`1">
+            <summary>
+                Provides methods to determine the end of an iteration process using residual.
+            </summary>
+            <typeparam name="T">
+                The type of data.
+            </typeparam>
+            <remarks>
+                <typeparamref name="T"/> should have the default comparer or it should be provided.
+            </remarks>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ResidualStopCriterion`1.#ctor(`0,System.Collections.Generic.IComparer{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.ResidualStopCriterion`1"/> class.
+            </summary>
+            <param name="requiredResidual">
+                The required residual.
+            </param>
+            <param name="comparer">
+                An instance that provides methods to compare two value of <typeparamref name="T"/> type.
+            </param>
+            <exception cref="T:Exul.Core.NonComparableTypeException">
+                <paramref name="comparer"/> is <see langword="null"/> and <typeparamref name="T"/> has no default comparer.
+            </exception>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.ResidualStopCriterion`1.ShouldStop(Exul.Mathematics.LinearAlgebra.IterationData{`0})">
+            <summary>
+                Determines whether an iteration process should be stopped.
+            </summary>
+            <param name="data">
+                The data describing a current state of the iteration process.
+            </param>
+            <returns>
+                <see langword="true"/> if the iteration process should be stopped; otherwise, <see langword="false"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ResidualStopCriterion`1.Comparer">
+            <summary>
+                Gets the comparer that is used to compare the values.
+            </summary>
+            <value>
+                The comparer that is used to compare the values.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.ResidualStopCriterion`1.RequiredResidual">
+            <summary>
+                Gets the required residual.
+            </summary>
+            <value>
+                The required residual.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1">
+            <summary>
+                Represents a sparse matrix that has the compressed storage with the row-major order for the low triangle and
+                the column-major order for the high triangle.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.#ctor(System.Int32[],System.Int32[],System.Int32[],System.Int32[],`0[],`0[],`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1"/> class.
+            </summary>
+            <param name="lowTriangleRowsBegins">
+                A collection of indexes of rows begins in the low triangle.
+            </param>
+            <param name="lowTriangleColumnsIndexes">
+                A collection of zero-based indexes of columns of nonzero elements in the low triangle.
+            </param>
+            <param name="highTriangleColumnsBegins">
+                A collection of indexes of columns begins in the high triangle.
+            </param>
+            <param name="highTriangleRowsIndexes">
+                A collection of zero-based indexes of rows of nonzero elements in the high triangle.
+            </param>
+            <param name="lowTriangleData">
+                A collection of values of nonzero elements in the low triangle.
+            </param>
+            <param name="diagonalData">
+                A collection of values of elements on the diagonal.
+            </param>
+            <param name="highTriangleData">
+                A collection of values of nonzero elements in the high triangle.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="lowTriangleRowsBegins"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="lowTriangleColumnsIndexes"/> is <see langword="null"/>.
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="highTriangleColumnsBegins"/> is <see langword="null"/>.
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="highTriangleRowsIndexes"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.NoEnoughElementsException">
+                <paramref name="lowTriangleRowsBegins"/> has count of elements less than 2.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="lowTriangleColumnsIndexes"/> has count of elements less than
+                    <paramref name="lowTriangleRowsBegins"/>[rowsCount] - <paramref name="lowTriangleRowsBegins"/>[0].
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="highTriangleColumnsBegins"/> has count of elements less than 2.
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="highTriangleRowsIndexes"/> has count of elements less than
+                    <paramref name="highTriangleColumnsBegins"/>[columnsCount] - <paramref name="highTriangleColumnsBegins"/>[0].
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="diagonalData"/> is not <see langword="null"/> and has count of elements less than
+                    min(rowsCount, columnsCount).
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="lowTriangleData"/> is not <see langword="null"/> and has count of elements less than
+                    <paramref name="lowTriangleRowsBegins"/>[rowsCount] - <paramref name="lowTriangleRowsBegins"/>[0].
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="highTriangleData"/> is not <see langword="null"/> and has count of elements less than
+                    <paramref name="highTriangleColumnsBegins"/>[columnsCount] - <paramref name="highTriangleColumnsBegins"/>[0].
+                </para>
+            </exception>
+            <remarks>
+                The number of rows is determined as length of <paramref name="lowTriangleRowsBegins"/> minus 1.
+                The number of columns is determined as length of <paramref name="highTriangleColumnsBegins"/> minus 1.
+                The elements of <paramref name="lowTriangleRowsBegins"/> and <paramref name="highTriangleColumnsBegins"/>
+                should be nonnegative and
+                each element of <paramref name="lowTriangleRowsBegins"/> and <paramref name="highTriangleColumnsBegins"/>
+                should be equal to or greater than it's previous element, but both condition don't verified in the constructor.
+            </remarks>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.DiagonalValues">
+            <summary>
+                Gets the collection of values of elements on the diagonal.
+            </summary>
+            <value>
+                The collection of values of elements on the diagonal.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.HighTriangleColumnsBegins">
+            <summary>
+                Gets the collection of indexes of columns begins in the high triangle.
+            </summary>
+            <value>
+                The collection of indexes of columns begins in the high triangle.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.HighTriangleRowsIndexes">
+            <summary>
+                Gets The collection of zero-based indexes of rows of nonzero elements in the high triangle.
+            </summary>
+            <value>
+                The collection of zero-based indexes of rows of nonzero elements in the high triangle.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.HighTriangleValues">
+            <summary>
+                Gets the collection of values of nonzero elements in the high triangle.
+            </summary>
+            <value>
+                The collection of values of nonzero elements in the high triangle.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.LowTriangleColumnsIndexes">
+            <summary>
+                Gets the collection of zero-based indexes of columns of nonzero elements in the low triangle.
+            </summary>
+            <value>
+                The collection of zero-based indexes of columns of nonzero elements in the low triangle.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.LowTriangleRowsBegins">
+            <summary>
+                Gets the collection of indexes of rows begins in the low triangle.
+            </summary>
+            <value>
+                The collection of indexes of rows begins in the low triangle.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseMatrix`1.LowTriangleValues">
+            <summary>
+                Gets the collection of values of nonzero elements in the low triangle.
+            </summary>
+            <value>
+                The collection of values of nonzero elements in the low triangle.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1">
+            <summary>
+                Represents a sparse symmetric matrix with the compressed storage with row-major order for the low triangle and
+                column-major order for the high triangle.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1._id">
+            <summary>
+               The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1.#ctor(System.Int32[],System.Int32[],`0[],`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1"/> class.
+            </summary>
+            <param name="begins">
+                A collection of indexes of rows and columns begins.
+            </param>
+            <param name="indexes">
+                A collection of zero-based indexes of rows and columns of nonzero elements.
+            </param>
+            <param name="diagonalData">
+                A collection of values of elements on diagonal.
+            </param>
+            <param name="triangleData">
+                A collection of values of nonzero elements placed not on diagonal.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="begins"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="indexes"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.NoEnoughElementsException">
+                <paramref name="begins"/> has count of elements less than 2.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="indexes"/> has count of elements less than
+                    <paramref name="begins"/>[rowsCount] - <paramref name="begins"/>[0].
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="triangleData"/> is not <see langword="null"/> and has count of elements less than
+                    <paramref name="begins"/>[rowsCount] - <paramref name="begins"/>[0].
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="diagonalData"/> is not <see langword="null"/> and has count of elements less than rows count.
+                </para>
+            </exception>
+            <remarks>
+                The size of matrix is determined as length of <paramref name="begins"/> minus 1.
+                The elements of <paramref name="begins"/> should be nonnegative and
+                each element of <paramref name="begins"/> should be equal to or greater than it's previous elements,
+                but both conditions don't verified in the constructor.
+            </remarks>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1.Begins">
+            <summary>
+                Gets the collection of indexes of rows and columns begins.
+            </summary>
+            <value>
+                The collection of indexes of rows and columns begins.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1.DiagonalValues">
+            <summary>
+                Gets the collection of values of diagonal elements.
+            </summary>
+            <value>
+                The collection of values of diagonal elements.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1.Indexes">
+            <summary>
+                Gets the collection of zero-based indexes of rows and columns of nonzero elements.
+            </summary>
+            <value>
+                The collection of zero-based indexes of rows and columns of nonzero elements.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowColumnSparseSymmetricMatrix`1.TriangleValues">
+            <summary>
+                Gets the collection of values of nonzero elements.
+            </summary>
+            <value>
+                The collection of values of nonzero elements.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.RowDenseMatrix`1">
+            <summary>
+                Represents a dense matrix with the row-major two-dimensional storage.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.RowDenseMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.RowDenseMatrix`1.#ctor(`0[][])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.RowDenseMatrix`1"/> class.
+            </summary>
+            <param name="data">
+                The collection of values of matrix elements in row-major order.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="data"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    An element of <paramref name="data"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.EmptyCollectionException">
+                <paramref name="data"/> is empty.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    An element of <paramref name="data"/> is empty.
+                </para>
+            </exception>
+            <remarks>
+                Only the first element of <paramref name="data"/> is verified for nullness and emptyness.
+            </remarks>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowDenseMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowDenseMatrix`1.Values">
+            <summary>
+                Gets the collection of values of matrix elements in the row-major order.
+            </summary>
+            <value>
+                The collection of values of matrix elements in the row-major order.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.RowFlattenDenseMatrix`1">
+            <summary>
+                Represents a dense matrix with the row-major flatten storage.
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.RowFlattenDenseMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.RowFlattenDenseMatrix`1.#ctor(System.Int32,System.Int32,`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.RowFlattenDenseMatrix`1"/> class.
+            </summary>
+            <param name="rowsCount">
+                The number of rows.
+            </param>
+            <param name="columnsCount">
+                The number of columns.
+            </param>
+            <param name="data">
+                The collection of values of matrix elements in the row-major order.
+            </param>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="rowsCount"/> is negative or equal to zero.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnsCount"/> is negative or equal to zero.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.NoEnoughElementsException">
+                <paramref name="data"/> is not <see langword="null"/> and
+                has less than <paramref name="rowsCount"/> * <paramref name="columnsCount"/> elements.
+            </exception>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowFlattenDenseMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowFlattenDenseMatrix`1.Values">
+            <summary>
+                Gets the collection of values of matrix elements in the row-major order.
+            </summary>
+            <value>
+                The collection of values of matrix elements in the row-major order.
+            </value>
+        </member>
+        <member name="T:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1">
+            <summary>
+                Represents a sparse matrix with the compressed row-major storage (CRS-format).
+            </summary>
+            <typeparam name="T">
+                The type of values of matrix elements.
+            </typeparam>
+        </member>
+        <member name="F:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1._id">
+            <summary>
+                The identifier that uniquely identifies type of the matrix.
+            </summary>
+        </member>
+        <member name="M:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1.#ctor(System.Int32,System.Int32,System.Int32[],System.Int32[],`0[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1"/> class.
+            </summary>
+            <param name="rowsCount">
+                The number of rows in the new <see cref="T:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1"/>.
+            </param>
+            <param name="columnsCount">
+                The number of columns of the new <see cref="T:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1"/>.
+            </param>
+            <param name="rowsBegins">
+                A collection of indexes of rows begins.
+            </param>
+            <param name="columnsIndexes">
+                A collection of zero-based indexes of columns of nonzero elements.
+            </param>
+            <param name="data">
+                A collection of values of nonzero elements.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="rowsBegins"/> is <see langword="null"/>.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnsIndexes"/> is <see langword="null"/>.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.InvalidSizeArgumentException">
+                <paramref name="rowsCount"/> is negative or equal to zero.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnsCount"/> is negative or equal to zero.
+                </para>
+            </exception>
+            <exception cref="T:Exul.Core.NoEnoughElementsException">
+                <paramref name="rowsBegins"/> has count of elements less than <paramref name="rowsCount"/> + 1.
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="columnsIndexes"/> has count of elements less than
+                    <paramref name="rowsBegins"/>[<paramref name="rowsCount"/>] - <paramref name="rowsBegins"/>[0].
+                </para>
+                <para>
+                    --or--
+                </para>
+                <para>
+                    <paramref name="data"/> is not <see langword="null"/> and has count of elements less than
+                    <paramref name="rowsBegins"/>[<paramref name="rowsCount"/>] - <paramref name="rowsBegins"/>[0].
+                </para>
+            </exception>
+            <remarks>
+                The elements of <paramref name="rowsBegins"/> should be nonnegative and
+                each element of <paramref name="rowsBegins"/> should be equal to or greater than it's previous element,
+                but both condition aren't verified in the constructor.
+            </remarks>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1.UniqueId">
+            <summary>
+                Gets unique identifier of this matrix type.
+            </summary>
+            <value>
+                Unique identifier of this matrix type.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1.ColumnsIndexes">
+            <summary>
+                Gets the collection of zero-based indexes of columns of nonzero elements.
+            </summary>
+            <value>
+                The collection of zero-based indexes of columns of nonzero elements.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1.RowsBegins">
+            <summary>
+                Gets the collection of indexes of rows begins.
+            </summary>
+            <value>
+                The collection of indexes of rows begins.
+            </value>
+        </member>
+        <member name="P:Exul.Mathematics.LinearAlgebra.RowSparseMatrix`1.Values">
+            <summary>
+                Gets the collection of values of nonzero elements.
+            </summary>
+            <value>
+                The collection of values of nonzero elements.
+            </value>
+        </member>
+    </members>
+</doc>

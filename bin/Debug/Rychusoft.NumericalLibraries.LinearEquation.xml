@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rychusoft.NumericalLibraries.LinearEquation</name>
+    </assembly>
+    <members>
+        <member name="M:Rychusoft.NumericalLibraries.LinearEquation.LinearEquation.Compute">
+            <summary>
+            Compute variables
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rychusoft.NumericalLibraries.LinearEquation.LinearEquation.#ctor(System.Double[0:,0:])">
+            <summary>
+            Linear equation constructor
+            </summary>
+            <param name="coefficients">Coefficients standing by the variables. Double[rows, rows + 1]</param>
+        </member>
+    </members>
+</doc>
